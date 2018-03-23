@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accumulate.core.dao.IQzLogDao">
+	<resultMap id="BaseResultMap" type="com.accumulate.core.entity.QzLog">
+		<id column="ID" property="id" jdbcType="BIGINT" />
+		<result column="TASK_NAME" property="taskName" jdbcType="VARCHAR" />
+		<result column="START_TIME" property="startTime" jdbcType="TIMESTAMP" />
+		<result column="END_TIME" property="endTime" jdbcType="TIMESTAMP" />
+		<result column="STATUS" property="status" jdbcType="INTEGER" />
+		<result column="REMARK" property="remark" jdbcType="VARCHAR" />
+		<result column="LOGIC_DESCRIBE" property="logicDescribe" jdbcType="VARCHAR" />
+		<result column="REQUEST" property="request" jdbcType="VARCHAR" />
+		<result column="RESPONSE" property="response" jdbcType="VARCHAR" />
+		<result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="CONSUME" property="consume" jdbcType="BIGINT" />
+	</resultMap>
+	
+	<insert id="insertQzLog" parameterType="com.accumulate.core.entity.QzLog">
+		<selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE">
+			select SEQ_QZ_LOG.NEXTVAL from dual
+		</selectKey>
+		<![CDATA[
+			INSERT INTO qz_log (
+			    id,
+			    task_name,
+			    start_time,
+			    end_time,
+			    status,
+			    remark,
+			    logic_describe,
+			    request,
+			    response,
+			    create_time,
+			    consume
+			) VALUES (
+			    #{id,jdbcType=BIGINT},
+			    #{taskName,jdbcType=VARCHAR},
+			    #{startTime,jdbcType=TIMESTAMP},
+			    #{endTime,jdbcType=TIMESTAMP},
+			    #{status,jdbcType=INTEGER},
+			    #{remark,jdbcType=VARCHAR},
+			    #{logicDescribe,jdbcType=VARCHAR},
+			    #{request,jdbcType=VARCHAR},
+			    #{response,jdbcType=VARCHAR},
+			    sysdate,
+			    #{consume,jdbcType=BIGINT}
+			)
+		]]>
+	</insert>
+	
+	<select id="queryQzLog" resultMap="BaseResultMap">
+		SELECT
+		    id,
+		    task_name,
+		    start_time,
+		    end_time,
+		    status,
+		    remark,
+		    logic_describe,
+		    request,
+		    response,
+		    create_time,
+		    consume
+		FROM
+		    qz_log
+		where 1=1
+		<if test="taskName != null and taskName != ''">
+			and task_name like concat(concat('%',#{taskName}),'%')
+		</if>
+		<if test="startTime != null and startTime != ''">
+			<![CDATA[and create_time >= to_date(#{startTime},'yyyy-mm-dd hh24:mi:ss')]]>
+		</if>
+		<if test="endTime != null and endTime != ''">
+			<![CDATA[and create_time <= to_date(#{endTime},'yyyy-mm-dd hh24:mi:ss')]]>
+		</if>
+		order by id desc
+	</select>
+</mapper>
