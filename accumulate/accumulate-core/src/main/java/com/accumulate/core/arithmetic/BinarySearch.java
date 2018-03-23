@@ -30,11 +30,6 @@ public class BinarySearch {
 		return -1;
 	}
 
-	@Deprecated
-	public static int rank(int key, int[] a) {
-		return indexOf(a, key);
-	}
-
 	public static void main(String[] args) {
 		String path = BinarySearch.class.getClassLoader().getResource("tinyT.txt").getFile();
 
