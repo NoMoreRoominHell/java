@@ -17,7 +17,7 @@ public class RandomSeq {
 	 *            the command-line arguments
 	 */
 	public static void main(String[] args) {
-		
+
 		// command-line arguments
 		int n = Integer.parseInt(args[0]);
 
@@ -29,9 +29,7 @@ public class RandomSeq {
 				double x = StdRandom.uniform();
 				StdOut.println(x);
 			}
-		}
-
-		else if (args.length == 3) {
+		} else if (args.length == 3) {
 			double lo = Double.parseDouble(args[1]);
 			double hi = Double.parseDouble(args[2]);
 
@@ -40,9 +38,7 @@ public class RandomSeq {
 				double x = StdRandom.uniform(lo, hi);
 				StdOut.printf("%.2f\n", x);
 			}
-		}
-
-		else {
+		} else {
 			throw new IllegalArgumentException("Invalid number of arguments");
 		}
 	}
