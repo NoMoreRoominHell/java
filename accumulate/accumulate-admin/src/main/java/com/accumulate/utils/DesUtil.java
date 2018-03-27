@@ -76,7 +76,7 @@ public class DesUtil {
 		} catch (UnsupportedEncodingException e) {
 			log.error(e.getMessage(), e);
 		}
-		return null;
+		return datasource;
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class DesUtil {
 		} catch (BadPaddingException e) {
 			log.error(e.getMessage(), e);
 		}
-		return null;
+		return src;
 	}
 
 	public static void main(String[] args) throws Exception {
