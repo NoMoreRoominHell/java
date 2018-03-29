@@ -1,4 +1,4 @@
-package com.accumulate.core.design.patterns;
+package com.accumulate.core.design.patterns.state;
 
 /**
  * 状态模式的切换类

@@ -1,4 +1,4 @@
-package com.accumulate.core.design.patterns;
+package com.accumulate.core.design.patterns.state;
 
 /**
  * 核心思想就是：当对象的状态改变时，同时改变其行为

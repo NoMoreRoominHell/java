@@ -1,4 +1,4 @@
-package com.accumulate.core.design.patterns;
+package com.accumulate.core.design.patterns.state;
 
 public class StateTest {
 
