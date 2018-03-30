@@ -1,0 +1,12 @@
+2018-03-30 10:47:26 [main]-[INFO] HttpClientTool send request:null
+2018-03-30 10:51:16 [main]-[INFO] HttpClientTool send request:null
+2018-03-30 10:51:17 [main]-[INFO] HttpClientTool send response:
+2018-03-30 10:52:17 [main]-[INFO] HttpClientTool send request:null
+2018-03-30 10:53:31 [main]-[INFO] HttpClientTool send response:
+2018-03-30 10:58:22 [main]-[INFO] HttpClientTool send request:null
+2018-03-30 10:58:23 [main]-[INFO] HttpClientTool send response:
+2018-03-30 11:03:35 [main]-[INFO] HttpClientTool send request:null
+2018-03-30 11:03:37 [main]-[INFO] HttpClientTool send response:{"code":"0004","data":"","msg":"用户已存在"}
+2018-03-30 11:12:43 [main]-[INFO] HttpClientTool send response:{"code":"0004","data":"","msg":"用户已存在"}
+2018-03-30 11:13:49 [main]-[INFO] HTTP/1.1 200 
+2018-03-30 11:13:49 [main]-[INFO] HttpClientTool send response:{"code":"0004","data":"","msg":"用户已存在"}
