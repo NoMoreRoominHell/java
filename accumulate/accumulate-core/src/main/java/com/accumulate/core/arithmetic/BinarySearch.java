@@ -1,11 +1,5 @@
 package com.accumulate.core.arithmetic;
 
-import java.util.Arrays;
-
-import com.accumulate.core.algs4.In;
-import com.accumulate.core.algs4.StdIn;
-import com.accumulate.core.algs4.StdOut;
-
 /**
  * 二分查找
  */
@@ -18,7 +12,6 @@ public class BinarySearch {
 		int lo = 0;
 		int hi = a.length - 1;
 		while (lo <= hi) {
-			// Key is in a[lo..hi] or not present.
 			int mid = lo + (hi - lo) / 2;
 			if (key < a[mid])
 				hi = mid - 1;
@@ -31,18 +24,12 @@ public class BinarySearch {
 	}
 
 	public static void main(String[] args) {
-		String path = BinarySearch.class.getClassLoader().getResource("tinyT.txt").getFile();
+		// for (int i = 0; i < 10; i++) {
+		// System.out.println((int) (Math.random() * 10) + ",");
+		// }
+		int a[] = { 2, 3, 8, 4, 7, 0, 9, 5, 6, 8 };
+		System.out.println(BinarySearch.indexOf(a, 8));
 
-		In in = new In(path);
-		int[] whitelist = in.readAllInts();
-
-		Arrays.sort(whitelist);
-
-		while (!StdIn.isEmpty()) {
-			int key = StdIn.readInt();
-			if (BinarySearch.indexOf(whitelist, key) == -1)
-				StdOut.println(key);
-		}
 	}
 
 }
