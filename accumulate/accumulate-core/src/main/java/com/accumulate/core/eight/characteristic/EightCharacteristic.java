@@ -7,6 +7,9 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+/**
+ * 函数式接口
+ */
 public class EightCharacteristic {
 
 	public static void main(String[] args) {
